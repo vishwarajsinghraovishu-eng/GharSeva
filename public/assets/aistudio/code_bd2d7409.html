@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>GharSeva - Verified Rentals with Zero Brokerage</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              teal: "#0D9488",
+              "teal-dark": "#0F766E",
+              "teal-light": "#CCFBF1",
+              emerald: "#10B981",
+              navy: "#0F172A",
+              dark: "#1E293B",
+              muted: "#64748B",
+              border: "#E2E8F0",
+              surface: "#F8FAFC",
+              card: "#FFFFFF"
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-brand-surface text-brand-navy antialiased">
+<!-- 1. HEADER & NAVIGATION -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-border/60 transition-all">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="GharSeva Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDNSD8cB9njjTrLMlj-qsHrQUs07iDd9twhvao26Tqab4OtrEmV9VbIXAOE7933XEPHR7NtqEeypG-hpM7nRUDyisT7JVip_-4DAzKy4wvfQOfNYc2Tv6dTmLi4a8lN1x50Y-P34su1scByITmCSRpw43MoB2cyuV_Qc_5DKIImi2L_zFOPwwq3YDjhSJiUP38bBs_nJjggcSk5jqz_XbZBC3MhvZ6JL4ceq3xYJ54"/>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tight text-brand-navy group-hover:text-brand-teal transition-colors">GharSeva</span>
+<span class="text-[10px] font-semibold text-brand-teal uppercase tracking-wider -mt-0.5">Verified Rentals</span>
+</div>
+</a>
+<!-- Simple Nav Links -->
+<nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-brand-muted">
+<a class="hover:text-brand-teal transition-colors" href="#featured-homes">Explore Homes</a>
+<a class="hover:text-brand-teal transition-colors" href="#how-it-works">How it Works</a>
+<a class="hover:text-brand-teal transition-colors" href="#zero-brokerage">Zero Brokerage</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<a class="text-[14px] font-medium text-brand-muted hover:text-brand-navy transition-colors hidden sm:block" href="#login">Log In</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand-teal hover:bg-brand-teal-dark text-white font-semibold text-sm transition-all shadow-sm" href="#post-property">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Post Property Free</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full"><div class="flex flex-col w-full">
+<!-- STICKY DISCOVERY FILTER BAR -->
+<aside aria-label="Search and Filter Console" class="sticky top-20 z-40 bg-surface-container-lowest shadow-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col gap-3">
+<!-- Top Row: Query Search, Main BHK Toggles, View Mode -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+<!-- City & Locality Input Chamber -->
+<div class="flex-1 flex items-center bg-surface-container-low rounded-xl px-3.5 py-2">
+<span class="material-symbols-outlined text-secondary text-xl mr-2">location_on</span>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-sm text-on-surface-variant uppercase">Locality &amp; Landmark</span>
+<input class="bg-transparent border-0 p-0 font-body-md font-semibold text-on-surface focus:ring-0 focus:outline-none placeholder:text-outline truncate" placeholder="Search locality or landmark..." type="text" value="Indiranagar, Bengaluru"/>
+</div>
+<button aria-label="Clear location input" class="p-1 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<!-- BHK Quick Pill Selector -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-low rounded-xl overflow-x-auto">
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">All</button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">1 BHK</button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md bg-primary-container text-on-primary shadow-sm" type="button">2 BHK</button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">3 BHK</button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">4+ BHK</button>
+</div>
+<!-- Layout Mode Switcher -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl self-end lg:self-center">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-label-md text-on-surface-variant hover:text-on-surface transition-colors" title="List View Only" type="button">
+<span class="material-symbols-outlined text-base">format_list_bulleted</span>
+<span class="hidden sm:inline">List</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-label-md bg-secondary text-on-secondary shadow-sm" title="Split Map View Active" type="button">
+<span class="material-symbols-outlined text-base">map</span>
+<span class="hidden sm:inline">Map View</span>
+</button>
+</div>
+</div>
+<!-- Bottom Row: Filter Dropdowns, Active Badge, Sort Order -->
+<div class="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+<div class="flex flex-wrap items-center gap-2">
+<!-- Budget Range Selector -->
+<div class="relative">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors font-body-md text-on-surface" type="button">
+<span class="font-label-sm text-on-surface-variant">Budget:</span>
+<span class="font-semibold text-secondary">₹25k - ₹50k</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+</div>
+<!-- Tenant Type -->
+<div class="relative">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors font-body-md text-on-surface" type="button">
+<span class="font-label-sm text-on-surface-variant">Tenant:</span>
+<span class="font-semibold">Family, Bachelors</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+</div>
+<!-- Furnishing Type -->
+<div class="relative">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors font-body-md text-on-surface" type="button">
+<span class="font-label-sm text-on-surface-variant">Furnishing:</span>
+<span class="font-semibold">Semi-Furnished</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+</div>
+<!-- More Filters with Count Indicator -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>More Filters</span>
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-sm flex items-center justify-center">2</span>
+</button>
+</div>
+<!-- Sort Control -->
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface-variant hidden md:inline">Sort:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low pl-3 pr-8 py-1.5 rounded-lg font-body-md font-semibold text-on-surface border-0 focus:ring-0 cursor-pointer">
+<option>Recommended (Default)</option>
+<option>Rent: Low to High</option>
+<option>Rent: High to Low</option>
+<option>Recently Added</option>
+</select>
+<span class="material-symbols-outlined text-sm text-outline absolute right-2 top-2 pointer-events-none">unfold_more</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN SPLIT WORKSPACE: LISTINGS (58%) & DYNAMIC MAP (42%) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: FEED & SUMMARY (7 cols = 58.3%) -->
+<div class="lg:col-span-7 flex flex-col gap-5">
+<!-- Results Summary Banner -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h1 class="font-headline-sm text-on-surface">142 Verified Homes for Rent</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+                0% Brokerage
+              </span>
+</div>
+<p class="font-body-md text-on-surface-variant">Indiranagar • Bengaluru East • Direct Verified Owners</p>
+</div>
+<!-- Real-Time Alerts Switch -->
+<div class="flex items-center gap-3 bg-surface-container-low px-3 py-2 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold">Instant Alerts</span>
+<span class="font-label-sm text-on-surface-variant">Notify new flats</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<!-- PROPERTY CARD 1: FEATURED HOT DEAL -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col relative group">
+<!-- Top Row Badges Overlay on Media -->
+<div class="relative w-full aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Expansive sunlit living room of a modern Bengaluru apartment in Prestige Falcon City with floor-to-ceiling windows, teak-wood entertainment unit, plush gray sectional sofa, indoor fiddle-leaf plant, architectural recessed warm ambient lighting, high contrast contemporary aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4HbZYNU4ky3vVKUXmYgkTj_ur1pZ9k82D2uQxAS5MWrV76u5IQA5MlRfEpOh-Lq4KFtHv4cLLU8eWecH5ArsMKtS8L3p0bVm0Uk81IFI7qF0yISF_cDDBr2d6nMdBPqff0BtYPDfbwXAi5PTfhiE545WOGbwveeb7P7PMwG0I5a1v-ZuTW8qDpLb6BeQV6macWCZmYD7BciJLdMQX8RT-0CB2Mz7HkZwz0Nrteas"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/30"></div>
+<!-- Dynamic Badges -->
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">payments</span>
+                Zero Brokerage
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">badge</span>
+                Aadhaar Verified Owner
+              </span>
+</div>
+<!-- Media Meta Tools -->
+<div class="absolute top-3 right-3 flex items-center gap-2">
+<span class="px-2 py-1 rounded-lg bg-primary-container/80 backdrop-blur text-on-primary font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">360</span> 360° Tour
+              </span>
+<button aria-label="Add to favorites" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface hover:text-error flex items-center justify-center transition-colors shadow" type="button">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm bg-primary/60 px-2 py-0.5 rounded backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">photo_camera</span> 1/12 Photos
+              </span>
+<span class="font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold px-2 py-0.5 rounded">
+                Immediate Move-in
+              </span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="p-4 sm:p-5 flex flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<h2 class="font-title-md text-on-surface group-hover:text-secondary transition-colors">
+                  Prestige Falcon City, 2 BHK Luxury Flat
+                </h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-sm">near_me</span>
+                  100 Feet Road, Indiranagar, Bengaluru • 400m to Metro
+                </p>
+</div>
+<div class="flex flex-col sm:items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-on-surface">₹36,000</span>
+<span class="font-label-md text-on-surface-variant">/ mo</span>
+</div>
+<span class="font-label-sm text-outline">+ ₹3,500 Maint.</span>
+</div>
+</div>
+<!-- Spec Badges Cluster -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">2 Bedrooms</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">1,240 sq.ft</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Semi-Furnished</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">4th / 14th Floor</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">East Facing</span>
+</div>
+<!-- Financial Details & Landlord Snapshot -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-secondary-container font-headline-sm font-bold">
+                  RK
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-on-surface">Ramesh K.</span>
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-secondary font-semibold">Direct Owner</span>
+</div>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+                    Responds in 15 mins
+                  </span>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-on-surface-variant">Security Deposit:</span>
+<p class="font-body-md font-bold text-on-surface">₹1,08,000 <span class="font-label-sm font-normal text-on-surface-variant">(3 Months)</span></p>
+</div>
+</div>
+<!-- Interactive Action Triggers -->
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                Book Free Visit
+              </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-secondary text-on-secondary font-label-md hover:bg-secondary/90 transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">chat</span>
+                Contact Landlord
+              </button>
+</div>
+</div>
+</article>
+<!-- PROPERTY CARD 2: PREMIUM 3 BHK -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col relative group">
+<div class="relative w-full aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary open concept dining and modern modular kitchen with quartz island in Adarsh Rhythm apartment Bangalore, Italian marble floor, minimalist pendant lamps, warm beige tones, impeccable interior finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCixHg53TptfAtGR0yPadojE1YTKVR3H5uZcHQryv5f6zS6E5YRoSUJ962s-twfBGMXGldcEamp7p6aVthyRST7kpLmh2FE_f1GNmw9z2a-V4xzhsQz2fOVc3nzyFziCQRKvm21J-Dte7HZev7P_a5O1c-lJQl80K6MKCfUSCuwiDFYAcyNxY9TxNRQY9zV4wao3yblt-wiGvoKq-lYfLp2P3WUGdJCLLTtLXbN1Bw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/30"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                Zero Brokerage
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">group</span>
+                Family Preferred
+              </span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to favorites" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface hover:text-error flex items-center justify-center transition-colors shadow" type="button">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm bg-primary/60 px-2 py-0.5 rounded backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">photo_camera</span> 1/18 Photos
+              </span>
+<span class="font-label-sm bg-surface-container-highest text-on-surface font-bold px-2 py-0.5 rounded">
+                Available from 1st April
+              </span>
+</div>
+</div>
+<div class="p-4 sm:p-5 flex flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<h2 class="font-title-md text-on-surface group-hover:text-secondary transition-colors">
+                  Adarsh Rhythm, Spacious 3 BHK Premium Flat
+                </h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-sm">near_me</span>
+                  12th Main, HAL 2nd Stage, Indiranagar, Bengaluru
+                </p>
+</div>
+<div class="flex flex-col sm:items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-on-surface">₹55,000</span>
+<span class="font-label-md text-on-surface-variant">/ mo</span>
+</div>
+<span class="font-label-sm text-outline">+ ₹4,500 Maint.</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">3 Bedrooms</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">1,850 sq.ft</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Fully Furnished</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Gated Society</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">1 Covered Parking</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-secondary-container font-headline-sm font-bold">
+                  PS
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-on-surface">Priya S.</span>
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-secondary font-semibold">Direct Owner</span>
+</div>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+                    Active today
+                  </span>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-on-surface-variant">Security Deposit:</span>
+<p class="font-body-md font-bold text-on-surface">₹1,65,000 <span class="font-label-sm font-normal text-on-surface-variant">(3 Months)</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                Book Free Visit
+              </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-secondary text-on-secondary font-label-md hover:bg-secondary/90 transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">chat</span>
+                Contact Landlord
+              </button>
+</div>
+</div>
+</article>
+<!-- PROPERTY CARD 3: STUDIO / 1 BHK -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col relative group">
+<div class="relative w-full aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Chic modern master bedroom with attached lush green garden balcony in Indiranagar 1st Stage Bangalore flat, natural sunlight casting soft morning shadows, minimal scandinavian oak wood bed and bookshelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMhSJBVZl7TlWiS-_SqPXmSNyJKTr4rfoe-OFjKCZ_KXPwSyJQW2Jr2deGqkhThQe3wGU6f3VDKbElFhainZ5ZB6RQWh85JVvZOABlAH5R18LEopK0JBB34A8_BBN6KqfX3vClf5rwRiiNlCIkV63iWHv-3FmgLVUm8K6DBaWvanYbTKHoUrbdMwZrgSYFPdLzLV5xj-m4BwjuyPLGHCiTEdERliP5IhrRoRTptws"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/30"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">bolt</span>
+                Zero Brokerage
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">person</span>
+                Bachelor Friendly
+              </span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to favorites" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface hover:text-error flex items-center justify-center transition-colors shadow" type="button">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm bg-primary/60 px-2 py-0.5 rounded backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">photo_camera</span> 1/8 Photos
+              </span>
+<span class="font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold px-2 py-0.5 rounded">
+                Available Immediately
+              </span>
+</div>
+</div>
+<div class="p-4 sm:p-5 flex flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<h2 class="font-title-md text-on-surface group-hover:text-secondary transition-colors">
+                  Indiranagar 1st Stage, Independent Builder Floor
+                </h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-sm">near_me</span>
+                  Near Defence Colony Playground, Indiranagar
+                </p>
+</div>
+<div class="flex flex-col sm:items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-on-surface">₹24,000</span>
+<span class="font-label-md text-on-surface-variant">/ mo</span>
+</div>
+<span class="font-label-sm text-secondary font-semibold">Maintenance Incl.</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">1 BHK</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">650 sq.ft</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Semi-Furnished</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">2nd Floor</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Green Balcony</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-secondary-container font-headline-sm font-bold">
+                  AN
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-on-surface">Anil N.</span>
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-secondary font-semibold">Direct Owner</span>
+</div>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+                    Replies within 1 hour
+                  </span>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-on-surface-variant">Security Deposit:</span>
+<p class="font-body-md font-bold text-on-surface">₹60,000 <span class="font-label-sm font-normal text-on-surface-variant">(2.5 Months)</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                Book Free Visit
+              </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-secondary text-on-secondary font-label-md hover:bg-secondary/90 transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">chat</span>
+                Contact Landlord
+              </button>
+</div>
+</div>
+</article>
+<!-- PROPERTY CARD 4: SOBHA SUNCREST -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col relative group">
+<div class="relative w-full aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bright airy Bengaluru condo living room overlooking landscaped society garden, Sobha Suncrest Indiranagar, polished vitrified flooring, modern wall paneling, modular dining table with clean natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB49IT2e0i3106h0_WNOJx324rVPsfUKhk3MYz41Xn7_QO9e218Ei3FfKDGMQupErC0KXPyNRMfjZQbc40FfKSAKQAFJ49LPu7de82xDR7kWtIGcNbTxGnBICB14fS54YOSPPKy6O2yuC2GucXlM9x0UWnhyF4N5fn9V7qU0iPZ-taGJpaaFr_AvKkb3Rc81QzUEs6QXBzlgPSb_b8dB9qItfSKLbZSTdQmIywXxu4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/30"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs">verified</span>
+                Zero Brokerage
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm shadow-md">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">shield</span>
+                RERA Registered
+              </span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to favorites" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface hover:text-error flex items-center justify-center transition-colors shadow" type="button">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm bg-primary/60 px-2 py-0.5 rounded backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">photo_camera</span> 1/14 Photos
+              </span>
+<span class="font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold px-2 py-0.5 rounded">
+                Gated Community
+              </span>
+</div>
+</div>
+<div class="p-4 sm:p-5 flex flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<h2 class="font-title-md text-on-surface group-hover:text-secondary transition-colors">
+                  Sobha Suncrest, 2 BHK Garden Facing Flat
+                </h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-sm">near_me</span>
+                  CMH Road, Indiranagar, Bengaluru
+                </p>
+</div>
+<div class="flex flex-col sm:items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-on-surface">₹38,000</span>
+<span class="font-label-md text-on-surface-variant">/ mo</span>
+</div>
+<span class="font-label-sm text-outline">+ ₹3,000 Maint.</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">2 BHK</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">1,310 sq.ft</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Semi-Furnished</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md">Clubhouse Access</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-secondary-container font-headline-sm font-bold">
+                  VK
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-on-surface">Vikram K.</span>
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-secondary font-semibold">Direct Owner</span>
+</div>
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+                    Verified Ownership Documents
+                  </span>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-on-surface-variant">Security Deposit:</span>
+<p class="font-body-md font-bold text-on-surface">₹1,14,000 <span class="font-label-sm font-normal text-on-surface-variant">(3 Months)</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                Book Free Visit
+              </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-secondary text-on-secondary font-label-md hover:bg-secondary/90 transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">chat</span>
+                Contact Landlord
+              </button>
+</div>
+</div>
+</article>
+<!-- PAGINATION & RESULTS COUNTER -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+<span class="font-body-md text-on-surface-variant">
+            Showing <span class="font-bold text-on-surface">4</span> of <span class="font-bold text-on-surface">142</span> properties in Indiranagar
+          </span>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="" type="button">Previous</button>
+<button class="w-9 h-9 rounded-lg bg-secondary text-on-secondary font-label-md flex items-center justify-center font-bold" type="button">1</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md flex items-center justify-center hover:bg-surface-variant transition-colors" type="button">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md flex items-center justify-center hover:bg-surface-variant transition-colors" type="button">3</button>
+<span class="text-outline px-1">...</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md flex items-center justify-center hover:bg-surface-variant transition-colors" type="button">36</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md hover:bg-surface-variant transition-colors" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: INTERACTIVE MAP CANVAS (5 cols = 41.7%) -->
+<div class="lg:col-span-5 sticky top-48 h-[calc(100vh-14rem)] hidden lg:flex flex-col rounded-2xl overflow-hidden shadow-md bg-surface-container-low relative">
+<!-- Static Map API Container via data-location -->
+<div class="w-full h-full bg-cover bg-center relative" data-location="Indiranagar, Bengaluru, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSom1iTdr939RklhcHvixKplMMoROoeHu4MKzzfOzuER-tOlpGpkG7thb-J93NSRvEGyTXfzBjYEsMzxsXhEfIjyjuWiMyWuA7UVToI8jlnQgEs2Qs2my27KK-nk5GVBndoIoVdGTKqcUlDkC2KpYbNcEprwSQO5lQDVVwuORjXeZ5_Y3g8Q9Tg8p5ht3RShhzF_xJDQr-2Vza93gHGMx8HEQxE-L7AOHwVaNSMso')">
+<!-- Ambient Map Vignette -->
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- MAP CONTROL OVERLAYS -->
+<!-- Top Control: Layer Toggles -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-md p-1 rounded-xl shadow-md">
+<button class="px-2.5 py-1 rounded-lg bg-secondary text-on-secondary font-label-sm font-semibold flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">subway</span> Metro
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface font-label-sm font-semibold hover:bg-surface-container transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs">local_hospital</span> Health
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface font-label-sm font-semibold hover:bg-surface-container transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs">school</span> Schools
+              </button>
+</div>
+<button class="w-9 h-9 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl shadow-md flex items-center justify-center text-on-surface hover:text-secondary transition-colors" title="Locality Boundary" type="button">
+<span class="material-symbols-outlined text-lg">polyline</span>
+</button>
+</div>
+<!-- Floating Price Markers Placed Contextually on Map -->
+<!-- Marker 1: Selected (Prestige Falcon City - ₹36K) -->
+<div class="absolute top-[42%] left-[48%] -translate-x-1/2 -translate-y-1/2 z-30 group cursor-pointer">
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary text-on-secondary font-label-md font-bold shadow-xl scale-110 ring-4 ring-secondary-fixed/50 animate-pulse">
+<span class="material-symbols-outlined text-xs">home</span>
+              ₹36K
+            </div>
+<div class="w-2.5 h-2.5 bg-secondary rotate-45 mx-auto -mt-1 shadow-sm"></div>
+</div>
+<!-- Marker 2: (Adarsh Rhythm - ₹55K) -->
+<div class="absolute top-[28%] left-[64%] -translate-x-1/2 -translate-y-1/2 z-20 group cursor-pointer">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md font-bold shadow-md hover:bg-primary-container hover:text-on-primary transition-all">
+              ₹55K
+            </div>
+</div>
+<!-- Marker 3: (Indiranagar 1st Stage - ₹24K) -->
+<div class="absolute top-[62%] left-[32%] -translate-x-1/2 -translate-y-1/2 z-20 group cursor-pointer">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md font-bold shadow-md hover:bg-primary-container hover:text-on-primary transition-all">
+              ₹24K
+            </div>
+</div>
+<!-- Marker 4: (Sobha Suncrest - ₹38K) -->
+<div class="absolute top-[50%] left-[78%] -translate-x-1/2 -translate-y-1/2 z-20 group cursor-pointer">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md font-bold shadow-md hover:bg-primary-container hover:text-on-primary transition-all">
+              ₹38K
+            </div>
+</div>
+<!-- Marker 5: (HAL 2nd Stage - ₹42K) -->
+<div class="absolute top-[75%] left-[60%] -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer">
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm font-bold shadow-md hover:bg-primary-container hover:text-on-primary transition-all">
+              ₹42K
+            </div>
+</div>
+<!-- Marker 6: (Defence Colony - ₹32K) -->
+<div class="absolute top-[20%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer">
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm font-bold shadow-md hover:bg-primary-container hover:text-on-primary transition-all">
+              ₹32K
+            </div>
+</div>
+<!-- Metro Station Overlays (Indiranagar & Swami Vivekananda Road) -->
+<div class="absolute top-[38%] left-[40%] flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest/90 text-on-surface font-label-sm shadow pointer-events-none">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span>Indiranagar Metro (Purple Line)</span>
+</div>
+<!-- Zoom & Geolocation Controls -->
+<div class="absolute right-4 bottom-32 flex flex-col gap-1.5 shadow-md rounded-xl overflow-hidden bg-surface-container-lowest">
+<button aria-label="Zoom in" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<button aria-label="Zoom out" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<button aria-label="My location" class="w-9 h-9 flex items-center justify-center text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">my_location</span>
+</button>
+</div>
+<!-- FLOATING PREVIEW MINI-CARD (Selected Property Detail) -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3 shadow-xl">
+<div class="flex items-center gap-3">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Compact thumbnail of upscale Bengaluru apartment interior with balcony view in Indiranagar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsr-CemV6Nl4iE0oGmPd2eN1CQXHGs5mOn3cjukaQ4fKQZbJoNBWJlwLSIFvJDdkqRB9mT3r0XpI02R9qJrZG4vXyaYz6B1JyzhmviD6uLOpbKUPnmNW15WFvC4l-RvWtQRc819jgOQKEh6ldTwFpQoVqfN9lgLJL_3vr7C-QfBPMfQN0pmq0xEex50XSwWLBeQrufD4dYtE0c7_C6zQ_yS5SRlITcNZhMfJK01xM"/>
+<span class="absolute bottom-1 left-1 bg-secondary text-on-secondary font-label-sm font-bold px-1.5 py-0.2 rounded text-[9px]">0% Fee</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-secondary font-semibold">Active Selection</span>
+<span class="font-price-card text-on-surface text-base">₹36,000<span class="font-label-sm font-normal text-on-surface-variant">/mo</span></span>
+</div>
+<h3 class="font-label-md text-on-surface truncate font-bold">Prestige Falcon City, 2 BHK</h3>
+<p class="font-label-sm text-on-surface-variant truncate">100 Feet Road, Indiranagar</p>
+<div class="flex items-center justify-between mt-1 pt-1 border-t border-surface-container">
+<span class="font-label-sm text-outline">1,240 sq.ft • East</span>
+<a class="font-label-sm text-secondary font-bold hover:underline flex items-center gap-0.5" href="#property-view">
+                    View Details
+                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUST & CONVENIENCE MICRO BANNER -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-base text-on-surface">100% Zero Brokerage</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Pay zero commissions. Deal directly with genuine property owners.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-base text-on-surface">Digital e-Stamped Agreements</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Govt registered rental agreements delivered to your inbox in 2 hours.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-2xl">security</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-base text-on-surface">Aadhaar Verified Owners</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Every listing is verified with official ownership records and physical visits.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT MICRO-INTERACTIONS SCRIPT -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle favorite heart state
+      const favoriteButtons = document.querySelectorAll('button[aria-label="Add to favorites"]');
+      favoriteButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const icon = btn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+            icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+            btn.classList.toggle('text-error');
+          }
+        });
+      });
+    });
+  </script>
+</div></main>
+<!-- 8. FOOTER -->
+<footer class="bg-white border-t border-brand-border/80 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Brand Info -->
+<div class="col-span-2 md:col-span-1">
+<a class="flex items-center gap-2 mb-3" href="#">
+<img alt="GharSeva Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDNSD8cB9njjTrLMlj-qsHrQUs07iDd9twhvao26Tqab4OtrEmV9VbIXAOE7933XEPHR7NtqEeypG-hpM7nRUDyisT7JVip_-4DAzKy4wvfQOfNYc2Tv6dTmLi4a8lN1x50Y-P34su1scByITmCSRpw43MoB2cyuV_Qc_5DKIImi2L_zFOPwwq3YDjhSJiUP38bBs_nJjggcSk5jqz_XbZBC3MhvZ6JL4ceq3xYJ54"/>
+<span class="text-lg font-bold text-brand-navy">GharSeva</span>
+</a>
+<p class="text-xs text-brand-muted leading-relaxed mb-3">
+            India's most trusted verified rental marketplace with zero brokerage and direct owner connection.
+          </p>
+<span class="inline-flex items-center gap-1 text-[11px] text-brand-teal font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span> RERA Registered
+          </span>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Popular Cities</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Bengaluru</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Mumbai</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Delhi-NCR</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Pune</a></li>
+</ul>
+</div>
+<!-- Company -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Company</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#how-it-works">How it Works</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#zero-brokerage">Zero Brokerage</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Owner Verification</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Contact &amp; Support</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Legal &amp; Trust</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Digital Lease Agreement</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Tenant Safety Guidelines</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-brand-border/60 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-muted gap-3">
+<p>© 2025 GharSeva Technologies Pvt Ltd. All rights reserved.</p>
+<p class="flex items-center gap-1 text-brand-teal font-medium">
+<span class="material-symbols-outlined text-sm">security</span> 100% Zero Brokerage Platform
+        </p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,6 @@
+{
+  "name": "GharSeva - Verified Rentals & Owner Hub",
+  "description": "India's trusted verified residential rental platform with zero brokerage, direct owner-tenant connection, live visit scheduling, and digital lease agreements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

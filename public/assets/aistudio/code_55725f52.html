@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>GharSeva - Verified Rentals with Zero Brokerage</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              teal: "#0D9488",
+              "teal-dark": "#0F766E",
+              "teal-light": "#CCFBF1",
+              emerald: "#10B981",
+              navy: "#0F172A",
+              dark: "#1E293B",
+              muted: "#64748B",
+              border: "#E2E8F0",
+              surface: "#F8FAFC",
+              card: "#FFFFFF"
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-brand-surface text-brand-navy antialiased">
+<!-- 1. HEADER & NAVIGATION -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-border/60 transition-all">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="GharSeva Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDNSD8cB9njjTrLMlj-qsHrQUs07iDd9twhvao26Tqab4OtrEmV9VbIXAOE7933XEPHR7NtqEeypG-hpM7nRUDyisT7JVip_-4DAzKy4wvfQOfNYc2Tv6dTmLi4a8lN1x50Y-P34su1scByITmCSRpw43MoB2cyuV_Qc_5DKIImi2L_zFOPwwq3YDjhSJiUP38bBs_nJjggcSk5jqz_XbZBC3MhvZ6JL4ceq3xYJ54"/>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tight text-brand-navy group-hover:text-brand-teal transition-colors">GharSeva</span>
+<span class="text-[10px] font-semibold text-brand-teal uppercase tracking-wider -mt-0.5">Verified Rentals</span>
+</div>
+</a>
+<!-- Simple Nav Links -->
+<nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-brand-muted">
+<a class="hover:text-brand-teal transition-colors" href="#featured-homes">Explore Homes</a>
+<a class="hover:text-brand-teal transition-colors" href="#how-it-works">How it Works</a>
+<a class="hover:text-brand-teal transition-colors" href="#zero-brokerage">Zero Brokerage</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<a class="text-[14px] font-medium text-brand-muted hover:text-brand-navy transition-colors hidden sm:block" href="#login">Log In</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand-teal hover:bg-brand-teal-dark text-white font-semibold text-sm transition-all shadow-sm" href="#post-property">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Post Property Free</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- 2. HERO SECTION -->
+<section class="relative pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gradient-to-b from-brand-surface via-white to-white overflow-hidden">
+<!-- Gentle ambient glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<!-- Friendly headline & subhead -->
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-navy tracking-tight mb-4">
+          Find your next home with <span class="text-brand-teal underline decoration-brand-teal/30 underline-offset-8">Zero Brokerage</span>
+</h1>
+<p class="text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10">
+          Direct owner listings, verified properties, and hassle-free agreements.
+        </p>
+<!-- Intuitive Single-Row Search Console -->
+<div class="bg-white rounded-2xl shadow-xl shadow-brand-navy/5 border border-brand-border p-3 sm:p-4 text-left">
+<!-- Segmented Category Tabs -->
+<div class="flex items-center gap-2 mb-3 pb-2 border-b border-brand-border/60">
+<button class="px-4 py-1.5 rounded-lg bg-brand-navy text-white text-xs sm:text-sm font-semibold transition-all">Rent</button>
+<button class="px-4 py-1.5 rounded-lg text-brand-muted hover:text-brand-navy text-xs sm:text-sm font-medium transition-all">Commercial</button>
+<button class="px-4 py-1.5 rounded-lg text-brand-muted hover:text-brand-navy text-xs sm:text-sm font-medium transition-all">PG / Flatmates</button>
+</div>
+<!-- Unified Input Row -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+<!-- Locality/City input -->
+<div class="md:col-span-6 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-brand-surface border border-brand-border/60 focus-within:border-brand-teal focus-within:bg-white transition-all">
+<span class="material-symbols-outlined text-brand-teal text-xl">search</span>
+<input class="bg-transparent w-full text-sm text-brand-navy placeholder:text-brand-muted/70 focus:outline-none" placeholder="Enter locality, society or city..." type="text"/>
+</div>
+<!-- BHK Dropdown -->
+<div class="md:col-span-2.5 flex items-center px-3 py-2.5 rounded-xl bg-brand-surface border border-brand-border/60">
+<select class="bg-transparent w-full text-sm text-brand-navy focus:outline-none cursor-pointer">
+<option value="all">BHK Type</option>
+<option value="1bhk">1 BHK</option>
+<option selected="" value="2bhk">2 BHK</option>
+<option value="3bhk">3 BHK</option>
+<option value="4bhk">4+ BHK</option>
+</select>
+</div>
+<!-- Budget Dropdown -->
+<div class="md:col-span-2 flex items-center px-3 py-2.5 rounded-xl bg-brand-surface border border-brand-border/60">
+<select class="bg-transparent w-full text-sm text-brand-navy focus:outline-none cursor-pointer">
+<option value="any">Budget</option>
+<option value="under20">Under ₹20K</option>
+<option selected="" value="20-40">₹20K - ₹40K</option>
+<option value="40-60">₹40K - ₹60K</option>
+<option value="above60">₹60K+</option>
+</select>
+</div>
+<!-- Prominent Search Button -->
+<div class="md:col-span-1.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-brand-teal hover:bg-brand-teal-dark text-white font-semibold text-sm transition-all flex items-center justify-center gap-1 shadow-sm">
+<span>Search</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4 Clean Clickable Popular Quick-Tags -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-brand-muted">
+<span class="font-medium text-brand-navy">Popular Searches:</span>
+<a class="px-2.5 py-1 rounded-full bg-brand-surface hover:bg-brand-border/70 border border-brand-border text-brand-muted hover:text-brand-navy transition-colors" href="#">Indiranagar</a>
+<a class="px-2.5 py-1 rounded-full bg-brand-surface hover:bg-brand-border/70 border border-brand-border text-brand-muted hover:text-brand-navy transition-colors" href="#">HSR Layout</a>
+<a class="px-2.5 py-1 rounded-full bg-brand-surface hover:bg-brand-border/70 border border-brand-border text-brand-muted hover:text-brand-navy transition-colors" href="#">Whitefield</a>
+<a class="px-2.5 py-1 rounded-full bg-brand-surface hover:bg-brand-border/70 border border-brand-border text-brand-muted hover:text-brand-navy transition-colors" href="#">Bandra West</a>
+</div>
+</div>
+</section>
+<!-- 3. TRUST STRIP -->
+<section class="border-y border-brand-border/60 bg-white py-8" id="zero-brokerage">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<!-- Item 1 -->
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-xl bg-brand-teal-light text-brand-teal flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<h3 class="text-sm font-bold text-brand-navy">100% Zero Brokerage</h3>
+<p class="text-xs text-brand-muted mt-0.5">Direct tenant-to-owner connect</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-xl bg-brand-teal-light text-brand-teal flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-2xl">badge</span>
+</div>
+<h3 class="text-sm font-bold text-brand-navy">Aadhaar-Verified Owners</h3>
+<p class="text-xs text-brand-muted mt-0.5">Every property legally validated</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-xl bg-brand-teal-light text-brand-teal flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+</div>
+<h3 class="text-sm font-bold text-brand-navy">Direct Contact &amp; Visits</h3>
+<p class="text-xs text-brand-muted mt-0.5">Free scheduled viewings</p>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-xl bg-brand-teal-light text-brand-teal flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<h3 class="text-sm font-bold text-brand-navy">Online Rental Agreements</h3>
+<p class="text-xs text-brand-muted mt-0.5">Digital e-stamping in 24 hours</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. FEATURED HOMES SECTION -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="featured-homes">
+<!-- Section Header with City Filter Pills -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+<div>
+<h2 class="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight">Featured Homes for Rent</h2>
+<p class="text-sm text-brand-muted mt-1">Inspected properties directly from verified landlords.</p>
+</div>
+<!-- City Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+<button class="px-3.5 py-1.5 rounded-full bg-brand-navy text-white text-xs font-semibold whitespace-nowrap">All</button>
+<button class="px-3.5 py-1.5 rounded-full bg-brand-surface hover:bg-brand-border/60 text-brand-muted hover:text-brand-navy text-xs font-medium whitespace-nowrap transition-colors">Bengaluru</button>
+<button class="px-3.5 py-1.5 rounded-full bg-brand-surface hover:bg-brand-border/60 text-brand-muted hover:text-brand-navy text-xs font-medium whitespace-nowrap transition-colors">Mumbai</button>
+<button class="px-3.5 py-1.5 rounded-full bg-brand-surface hover:bg-brand-border/60 text-brand-muted hover:text-brand-navy text-xs font-medium whitespace-nowrap transition-colors">Delhi-NCR</button>
+<button class="px-3.5 py-1.5 rounded-full bg-brand-surface hover:bg-brand-border/60 text-brand-muted hover:text-brand-navy text-xs font-medium whitespace-nowrap transition-colors">Pune</button>
+</div>
+</div>
+<!-- 3 Spacious Property Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg transition-all group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-brand-surface">
+<img alt="Modern living room in Bengaluru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7pbRco67Wk5xcr-EJ_1WcRkQ72pqE0BeqXI31UuMdyUqX_CYEneswiYYhP9I4nHHzD_wBnQjEeWKolQwwOAQ_EqPegucEYfwDubWnyD6K6fDr1nfDHgWT4Nf3Muv_eS9XxU_DvYdaRA1QmpdVQkVuF7hFUcPYaECmNrYeVWEeKV5whMV58BWuyRYk2RR2MO7VkNjLnbhpPizppklfeoykDrmyw5EAoLnapoa2YWY"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-brand-teal text-white text-[11px] font-semibold tracking-wide">ZERO BROKERAGE</span>
+<span class="px-2.5 py-1 rounded-full bg-brand-navy/80 backdrop-blur-sm text-white text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-brand-emerald">check_circle</span> Verified
+              </span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-baseline justify-between mb-1">
+<div>
+<span class="text-2xl font-extrabold text-brand-navy">₹34,000</span>
+<span class="text-xs text-brand-muted"> / mo</span>
+</div>
+<span class="text-xs font-medium text-brand-muted">Deposit: ₹1,00,000</span>
+</div>
+<h3 class="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors line-clamp-1 mb-1">
+              Prestige Falcon City, 2 BHK Luxury Flat
+            </h3>
+<p class="text-xs text-brand-muted flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm text-brand-teal">location_on</span>
+              Kanakapura Road, Bengaluru
+            </p>
+<div class="flex items-center gap-3 text-xs text-brand-muted mb-6 pt-3 border-t border-brand-border/60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">chair</span> Semi-Furnished</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">train</span> 400m to Metro</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<a class="py-2.5 rounded-lg border border-brand-border hover:bg-brand-surface text-brand-navy text-xs font-semibold text-center transition-colors" href="#">View Details</a>
+<a class="py-2.5 rounded-lg bg-brand-teal hover:bg-brand-teal-dark text-white text-xs font-semibold text-center transition-colors shadow-sm" href="#">Contact Owner</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg transition-all group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-brand-surface">
+<img alt="Modern kitchen in Mumbai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Wsw6o92LwAgD7S6cJjZSyMsUt9pKV_BAHmwGPSjX_7mCcqBMw-d2wAG5XAdYmT3SZNxpfIyAFsjYhz1XRI9Ym3udRs7GdQ9AmbbBSj9-gWkEonZVRpuyDgsPU6xV0HcVhUIfCQpaIFcomC_V5sYQVSs6HNJJIwetk6jbN0yyOjGy6f-Btyoka5At8NpGFZLyVFj7LYG8ACw4F01QoEQdhO59cqTKmOztHxgEXco"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-brand-teal text-white text-[11px] font-semibold tracking-wide">ZERO BROKERAGE</span>
+<span class="px-2.5 py-1 rounded-full bg-brand-navy/80 backdrop-blur-sm text-white text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-brand-emerald">check_circle</span> Verified
+              </span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-baseline justify-between mb-1">
+<div>
+<span class="text-2xl font-extrabold text-brand-navy">₹52,000</span>
+<span class="text-xs text-brand-muted"> / mo</span>
+</div>
+<span class="text-xs font-medium text-brand-muted">Deposit: ₹1,50,000</span>
+</div>
+<h3 class="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors line-clamp-1 mb-1">
+              Hiranandani Estate, 3 BHK Grand Living
+            </h3>
+<p class="text-xs text-brand-muted flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm text-brand-teal">location_on</span>
+              Thane West, Mumbai MMR
+            </p>
+<div class="flex items-center gap-3 text-xs text-brand-muted mb-6 pt-3 border-t border-brand-border/60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">chair</span> Fully Furnished</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">pool</span> Clubhouse</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<a class="py-2.5 rounded-lg border border-brand-border hover:bg-brand-surface text-brand-navy text-xs font-semibold text-center transition-colors" href="#">View Details</a>
+<a class="py-2.5 rounded-lg bg-brand-teal hover:bg-brand-teal-dark text-white text-xs font-semibold text-center transition-colors shadow-sm" href="#">Contact Owner</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg transition-all group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-brand-surface">
+<img alt="Clean studio apartment bedroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlkkEadUyqCTbuHvBIKA786lXCyb-x-gSOKnB9urNw1uKV1usrNLBHUniDXepUQCf0iPe-cnnrCn8lb8Mg_mXL75pF0SQRdAcUxU7Rh55qE5CWlv3Sl1fVL9FJ0Fi9qnjYEg37oAaHGpc2oiz1eRZ4m8XfJrKTTCiYnyKKqtBYAPxBfrz1cZ-brJxscyFKnwunUzSmw5X2vRwD8FLX1u64yeQ3TPkp40FiL6GIexo"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-brand-teal text-white text-[11px] font-semibold tracking-wide">ZERO BROKERAGE</span>
+<span class="px-2.5 py-1 rounded-full bg-brand-navy/80 backdrop-blur-sm text-white text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-brand-emerald">check_circle</span> Verified
+              </span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-baseline justify-between mb-1">
+<div>
+<span class="text-2xl font-extrabold text-brand-navy">₹22,500</span>
+<span class="text-xs text-brand-muted"> / mo</span>
+</div>
+<span class="text-xs font-medium text-brand-muted">Deposit: ₹45,000</span>
+</div>
+<h3 class="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors line-clamp-1 mb-1">
+              DLF Phase 3, Modern Studio Flat
+            </h3>
+<p class="text-xs text-brand-muted flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm text-brand-teal">location_on</span>
+              Cyber City, Gurgaon (Delhi-NCR)
+            </p>
+<div class="flex items-center gap-3 text-xs text-brand-muted mb-6 pt-3 border-t border-brand-border/60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">chair</span> Fully Furnished</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-brand-navy">wifi</span> High-Speed WiFi</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<a class="py-2.5 rounded-lg border border-brand-border hover:bg-brand-surface text-brand-navy text-xs font-semibold text-center transition-colors" href="#">View Details</a>
+<a class="py-2.5 rounded-lg bg-brand-teal hover:bg-brand-teal-dark text-white text-xs font-semibold text-center transition-colors shadow-sm" href="#">Contact Owner</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. HOW IT WORKS (ULTRA SIMPLE 3 STEPS) -->
+<section class="bg-brand-surface py-20 border-y border-brand-border/60" id="how-it-works">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight mb-3">How it Works</h2>
+<p class="text-sm sm:text-base text-brand-muted max-w-xl mx-auto mb-14">Renting a home should be simple, open, and broker-free.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-white rounded-2xl p-8 border border-brand-border text-center flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-brand-surface text-brand-teal flex items-center justify-center font-bold text-xl mb-5 shadow-sm border border-brand-border/80">
+              1
+            </div>
+<h3 class="text-base font-bold text-brand-navy mb-2">Search verified homes</h3>
+<p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+              Explore 100% genuine photos, accurate floor plans, and verified rental terms.
+            </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white rounded-2xl p-8 border border-brand-border text-center flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-brand-surface text-brand-teal flex items-center justify-center font-bold text-xl mb-5 shadow-sm border border-brand-border/80">
+              2
+            </div>
+<h3 class="text-base font-bold text-brand-navy mb-2">Connect with owner directly</h3>
+<p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+              Book a direct visit slot and chat with the landlord without middleman interference.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white rounded-2xl p-8 border border-brand-border text-center flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-brand-surface text-brand-teal flex items-center justify-center font-bold text-xl mb-5 shadow-sm border border-brand-border/80">
+              3
+            </div>
+<h3 class="text-base font-bold text-brand-navy mb-2">Move in with digital lease</h3>
+<p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+              Complete Aadhaar-based e-signing and legal e-stamped agreement right from your phone.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. CLEAN CITY GRID (TOP 4 CITIES) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight">Explore Rentals in Top Cities</h2>
+<p class="text-sm text-brand-muted mt-1">Discover popular hubs with verified listings.</p>
+</div>
+<a class="text-sm font-semibold text-brand-teal hover:text-brand-teal-dark flex items-center gap-1 transition-colors" href="#featured-homes">
+          View all cities <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- City 1: Bengaluru -->
+<a class="group relative rounded-2xl overflow-hidden bg-brand-navy aspect-[4/3] flex flex-col justify-end p-5 shadow-sm" href="#featured-homes">
+<img alt="Bengaluru" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIM3mebjUHQbr9IkDtNTZPzzwiSmE-LVfZ7yF_Crooh84Ys_5A0rbrTh6p7tA0unX47fyVTDxBAPWu66j9rUu9aP-57DjTkhb1eLYCLOVOF4waJeK8uQCCFS41-VA1UOyE3xx6fgb0C5Qt4eZUvnEqX3abPLAApykNlh6NAUnnvrnMABdw062l8X7SinN2IjSjCGy1_bXh3PxPGUcnafDo1MBkAKfR4VfJZnfGao8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent"></div>
+<div class="relative z-10 text-white">
+<h3 class="text-lg font-bold">Bengaluru</h3>
+<p class="text-xs text-white/80">14,800+ listings</p>
+</div>
+</a>
+<!-- City 2: Mumbai -->
+<a class="group relative rounded-2xl overflow-hidden bg-brand-navy aspect-[4/3] flex flex-col justify-end p-5 shadow-sm" href="#featured-homes">
+<img alt="Mumbai" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3smyATgBhqjPn3g_11k4ypFhdb-CTdoUEWpyL1FFFAYyJKYY_9zxwglHm2ZT_7GJQreQVhWuuVLCmn364QVW-g1SkE6JUgRgolVIiINV7n1JYX1BH0sV5jwYUrZwT_fnMf_8wamVfCtZMQ--Sjoh8ebqkr-7kNEKEIO32LJ1AqZ29i4EStPK6HFbfDYgyLnwI_t4wpybrm3e2aGx2tzEmWgGp3GtOGoYup72KLd8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent"></div>
+<div class="relative z-10 text-white">
+<h3 class="text-lg font-bold">Mumbai</h3>
+<p class="text-xs text-white/80">18,200+ listings</p>
+</div>
+</a>
+<!-- City 3: Delhi-NCR -->
+<a class="group relative rounded-2xl overflow-hidden bg-brand-navy aspect-[4/3] flex flex-col justify-end p-5 shadow-sm" href="#featured-homes">
+<img alt="Delhi-NCR" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQ7YPnl6eR6jIhzd8S2Pjw2hA4Tc1DtX7oNjhZUZp8SJXcz_utgjyCazojj-UZJJRysU2FwFV8QteLXumoVj_rhk4OerkgeqK2clQGOYWIGbSbA52RP9vTgsX5Zx_mmSbfhLGisnu4t7wqF_xtM4IZOcJEK5s2Rnmzqghk80J3YYHU2cgxqy_1ecfzv61rBPUovtI4FyIdzJBlny98TTjTtPXbICOgOHVpbi5ovE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent"></div>
+<div class="relative z-10 text-white">
+<h3 class="text-lg font-bold">Delhi-NCR</h3>
+<p class="text-xs text-white/80">11,940+ listings</p>
+</div>
+</a>
+<!-- City 4: Pune -->
+<a class="group relative rounded-2xl overflow-hidden bg-brand-navy aspect-[4/3] flex flex-col justify-end p-5 shadow-sm" href="#featured-homes">
+<img alt="Pune" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQJgTxlrmMEKA0FY2hRN3dyIHNdhKRojDVvIeN3p1wTSDEcTL1FL0XviiQqTeZuBbNpP3qiT4JqLrPLGc1sz9TAEG_ZAndNukatwkKKfkh9VRS4W_W0Dto_NWOqt6injUaJTAnvupbnnwScNZS968v8u95w0KV1qSfSg09YjlINKiqPJ1TUZiccMfmdDkwP9RQZcrU1DRi-2x2MVj_a9iVSipJkf3HLcxUBtaOIpY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent"></div>
+<div class="relative z-10 text-white">
+<h3 class="text-lg font-bold">Pune</h3>
+<p class="text-xs text-white/80">9,600+ listings</p>
+</div>
+</a>
+</div>
+</section>
+<!-- 7. LANDLORD CALLOUT BANNER -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="post-property">
+<div class="rounded-3xl bg-brand-navy text-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-96 h-96 bg-brand-teal/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-xl z-10 text-center md:text-left">
+<span class="inline-block px-3 py-1 rounded-full bg-white/10 text-brand-emerald text-xs font-semibold tracking-wider uppercase mb-3">For Landlords</span>
+<h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">Have a property to rent out?</h2>
+<p class="text-sm sm:text-base text-slate-300">
+            List for free in 2 minutes and connect directly with tenants. Save 100% on brokerage fees.
+          </p>
+</div>
+<div class="z-10 shrink-0">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-teal hover:bg-brand-teal-dark text-white font-semibold text-sm transition-all shadow-md" href="#">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>List Your Property</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- 8. FOOTER -->
+<footer class="bg-white border-t border-brand-border/80 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Brand Info -->
+<div class="col-span-2 md:col-span-1">
+<a class="flex items-center gap-2 mb-3" href="#">
+<img alt="GharSeva Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDNSD8cB9njjTrLMlj-qsHrQUs07iDd9twhvao26Tqab4OtrEmV9VbIXAOE7933XEPHR7NtqEeypG-hpM7nRUDyisT7JVip_-4DAzKy4wvfQOfNYc2Tv6dTmLi4a8lN1x50Y-P34su1scByITmCSRpw43MoB2cyuV_Qc_5DKIImi2L_zFOPwwq3YDjhSJiUP38bBs_nJjggcSk5jqz_XbZBC3MhvZ6JL4ceq3xYJ54"/>
+<span class="text-lg font-bold text-brand-navy">GharSeva</span>
+</a>
+<p class="text-xs text-brand-muted leading-relaxed mb-3">
+            India's most trusted verified rental marketplace with zero brokerage and direct owner connection.
+          </p>
+<span class="inline-flex items-center gap-1 text-[11px] text-brand-teal font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span> RERA Registered
+          </span>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Popular Cities</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Bengaluru</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Mumbai</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Delhi-NCR</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Rentals in Pune</a></li>
+</ul>
+</div>
+<!-- Company -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Company</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#how-it-works">How it Works</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#zero-brokerage">Zero Brokerage</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Owner Verification</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Contact &amp; Support</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div>
+<h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">Legal &amp; Trust</h4>
+<ul class="space-y-2 text-xs text-brand-muted">
+<li><a class="hover:text-brand-navy transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Digital Lease Agreement</a></li>
+<li><a class="hover:text-brand-navy transition-colors" href="#">Tenant Safety Guidelines</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-brand-border/60 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-muted gap-3">
+<p>© 2025 GharSeva Technologies Pvt Ltd. All rights reserved.</p>
+<p class="flex items-center gap-1 text-brand-teal font-medium">
+<span class="material-symbols-outlined text-sm">security</span> 100% Zero Brokerage Platform
+        </p>
+</div>
+</div>
+</footer>
+</body></html>

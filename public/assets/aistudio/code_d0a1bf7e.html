@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#000000","inverse-on-surface":"#eaf1ff","secondary-fixed":"#89f5e7","error":"#ba1a1a","on-surface-variant":"#45464d","on-primary":"#ffffff","on-secondary-container":"#006f66","inverse-surface":"#213145","background":"#f8f9ff","on-error":"#ffffff","surface-tint":"#565e74","on-tertiary-fixed-variant":"#005236","surface-container-high":"#dce9ff","tertiary-fixed":"#6ffbbe","error-container":"#ffdad6","outline":"#76777d","surface-container":"#e5eeff","on-primary-fixed-variant":"#3f465c","primary-fixed":"#dae2fd","surface-variant":"#d3e4fe","on-error-container":"#93000a","secondary-fixed-dim":"#6bd8cb","on-secondary-fixed-variant":"#005049","on-surface":"#0b1c30","on-secondary":"#ffffff","surface-bright":"#f8f9ff","tertiary":"#000000","surface-container-low":"#eff4ff","secondary":"#006a61","primary-fixed-dim":"#bec6e0","on-tertiary-container":"#009668","on-background":"#0b1c30","tertiary-fixed-dim":"#4edea3","on-primary-fixed":"#131b2e","surface-dim":"#cbdbf5","on-tertiary-fixed":"#002113","on-tertiary":"#ffffff","outline-variant":"#c6c6cd","inverse-primary":"#bec6e0","on-secondary-fixed":"#00201d","on-primary-container":"#7c839b","tertiary-container":"#002113","secondary-container":"#86f2e4","surface-container-highest":"#d3e4fe","surface-container-lowest":"#ffffff","primary-container":"#131b2e","surface":"#f8f9ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"3rem","space-md":"1rem","space-xl":"2rem","gutter-mobile":"1rem","space-2xl":"3rem","space-lg":"1.5rem","margin-mobile":"1.25rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-tablet":"2rem","gutter":"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"price-card":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"price-card":["22px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-secondary-fixed text-[22px]">apartment</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">GharSeva</span><span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">Owner Hub</span></div></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard-overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Dashboard / Overview</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-properties" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">home_work</span><span class="font-body-md text-body-md">My Properties</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">6 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="add-new-property" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-body-md text-body-md">Add New Property</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">+ New</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tenant-enquiries" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">contact_page</span><span class="font-body-md text-body-md">Tenant Enquiries</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">12</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="visit-requests" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">calendar_clock</span><span class="font-body-md text-body-md">Visit Requests</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">3 Pending</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="in-app-messages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">forum</span><span class="font-body-md text-body-md">In-App Messages</span></div><span class="w-2 h-2 rounded-full bg-secondary"></span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="rental-agreements-and-e-stamps" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">gavel</span><span class="font-body-md text-body-md">Rental Agreements &amp; e-Stamps</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="owner-verification-kyc" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-body-md text-body-md">Owner Verification / KYC</span></div><span class="material-symbols-outlined text-secondary text-[18px]">verified</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">support_agent</span><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-bold">RM Support Active</span><span class="font-label-sm text-label-sm text-on-surface-variant">Priya S. (Bengaluru Hub)</span></div></div><a class="w-full py-space-xs rounded-lg bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface text-center font-label-md text-label-md text-on-surface transition-colors" data-path="contact-support" href="#">Connect RM</a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors font-label-md" data-path="my-properties" href="#"><span class="material-symbols-outlined text-[20px]">arrow_back</span><span>Save &amp; Exit</span></a><div class="h-5 w-px bg-surface-container-high"></div><div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>Draft Auto-saved at 11:42 AM</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span><span class="font-label-sm text-on-surface font-semibold">Col. Rajesh Sharma</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Stepper Breadcrumb Track -->
+<section class="w-full bg-surface-container-lowest shadow-sm py-space-md px-space-xl">
+<div class="max-w-6xl mx-auto flex items-center justify-between">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Step 1</span>
+<span class="font-title-md text-body-md text-on-surface font-semibold">Property &amp; Location</span>
+</div>
+</div>
+<div class="flex-1 mx-space-md h-0.5 bg-secondary"></div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Step 2</span>
+<span class="font-title-md text-body-md text-on-surface font-semibold">Rent &amp; Terms</span>
+</div>
+</div>
+<div class="flex-1 mx-space-md h-0.5 bg-secondary"></div>
+<!-- Step 3 (Active) -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-bold shadow-sm">
+          3
+        </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Step 3 • Final</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Photos &amp; Publish</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Two-Column Interactive Workspace -->
+<div class="max-w-6xl mx-auto w-full px-space-xl py-space-xl">
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Left Column (~65% width = 8 cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-space-xl">
+<!-- 1. Photos & Media Section -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Upload Photos &amp; Media</h2>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span> 4 Photos Uploaded
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              High-quality photos increase tenant inquiries by 5x. Add at least 3 photos (Cover photo, Living room, Bedroom).
+            </p>
+</div>
+<!-- Drag and Drop Canvas -->
+<div class="w-full rounded-xl bg-surface-container-low p-space-xl flex flex-col items-center justify-center text-center transition-all hover:bg-surface-container group cursor-pointer relative overflow-hidden">
+<input accept="image/png, image/jpeg, image/webp" class="absolute inset-0 opacity-0 cursor-pointer" multiple="" type="file"/>
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[28px]">cloud_upload</span>
+</div>
+<div class="flex items-center gap-1 font-title-md text-title-md text-on-surface">
+<span>Drag &amp; drop property photos here, or</span>
+<span class="text-secondary underline decoration-2 underline-offset-4">Browse Files</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+              Supports JPEG, PNG, WebP up to 15MB each • Min. resolution 1200 x 800px
+            </span>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-md text-on-surface-variant">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">view_in_ar</span>
+<span>Upload 360° Virtual Tour / Walkthrough (Optional)</span>
+</button>
+</div>
+</div>
+<!-- Photos Grid with Actions -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-bold">Uploaded Gallery (Drag to Reorder)</span>
+<span class="font-label-sm text-label-sm text-secondary">Tip: The first image is the public listing cover</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-space-md">
+<!-- Item 1: Cover Image -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container-high aspect-[4/3] shadow-sm flex flex-col justify-between p-space-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Bright sunlit living room of an upscale Bengaluru apartment opening to a lush green balcony with modern warm wooden floor accents and minimalist sofa set in natural daylight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0PsUzkF5q0fkT5nMMm2v4LGZOmqjg0J3PQ41YiUT7NV57v6GyUx_kChJfLCfzwiQMhfGlB0a4TzHc0TlfS4b9z1iigoR-WmKrBZBfsOdkeQxtPyni6BmSuqt5IbM3Qu4UqYDAMAq21q5ENu0eZoZ4AUrz6PKdS_oMmY-2TcYCysJs9Li11h_sWzbCQqtgbQdwJAOEfYe8Sb-mNp5vnsiok_mSK0gANEoPpLAQqRU')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/40 pointer-events-none"></div>
+<!-- Top badges -->
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">star</span> Cover Photo
+                  </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-surface-container-lowest shadow-sm" title="Rotate" type="button">
+<span class="material-symbols-outlined text-[15px]">rotate_right</span>
+</button>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-error hover:bg-surface-container-lowest shadow-sm" title="Delete" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Bottom tag & reorder handle -->
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Living Room</span>
+<span class="material-symbols-outlined text-on-primary text-[18px] cursor-grab opacity-80 group-hover:opacity-100">drag_indicator</span>
+</div>
+</div>
+<!-- Item 2: Master Bedroom -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container-high aspect-[4/3] shadow-sm flex flex-col justify-between p-space-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Spacious contemporary master bedroom with large bay window, neutral beige linens, subtle pendant lights, built-in wooden wardrobes, and clean architectural lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChhfy_jGZvn0xMkocNbF58nQfYcktHzeYqBWu_P7qNclO4k3Ih76Mvve_FKY93OkWitfUatF8Wnu29I5uaV9hlv4kko1OfyLYx0h7OjFmhgzjhfjCiWN6V3Qh5Jv4Q2UeyMvm5rh-raoPUQFKC-2B5fcUbqc5rc5vWNSsZuYl_wCvDTF5g-jiAMn7LzLy0r0J6PYGm1AAdbk6wovvHJc4BSRvrz8j7T8wmWySxUTQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/40 pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Photo 2</span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-surface-container-lowest shadow-sm" title="Rotate" type="button">
+<span class="material-symbols-outlined text-[15px]">rotate_right</span>
+</button>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-error hover:bg-surface-container-lowest shadow-sm" title="Delete" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Master Bedroom</span>
+<span class="material-symbols-outlined text-on-primary text-[18px] cursor-grab opacity-80 group-hover:opacity-100">drag_indicator</span>
+</div>
+</div>
+<!-- Item 3: Kitchen -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container-high aspect-[4/3] shadow-sm flex flex-col justify-between p-space-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Sleek Indian modular kitchen with matte slate-grey cabinets, quartz countertop, chimney hob, integrated microwave slot, and bright under-cabinet LED task lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAe00NT8VBOK-ZAJjIBiqE0AgC8OxuOlmYQ1zCtL2rn6y80d2pmJYQ8oGbwEfLm869XC3h7UK4UK1hoTxiQn-s5yPOTXJU7aH2z1cH88RKPGbzZS96v0-YjyK2CZ8ywmC2IrOO8koKDLHrp5-n-zEpq3H2yIVqaU5dJjGPZqsn2WBEZzo4PNglF6ieJfEGjm2QmTGrU5H5KEMfOeca4CC6-neqUPUQyyacJbK9aRvk')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/40 pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Photo 3</span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-surface-container-lowest shadow-sm" title="Rotate" type="button">
+<span class="material-symbols-outlined text-[15px]">rotate_right</span>
+</button>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-error hover:bg-surface-container-lowest shadow-sm" title="Delete" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Kitchen</span>
+<span class="material-symbols-outlined text-on-primary text-[18px] cursor-grab opacity-80 group-hover:opacity-100">drag_indicator</span>
+</div>
+</div>
+<!-- Item 4: Balcony / View -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container-high aspect-[4/3] shadow-sm flex flex-col justify-between p-space-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High-rise apartment balcony overlooking tree-lined clubhouse gardens and swimming pool in Bengaluru during soft morning golden hour with glass railing" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWf598U6IDB1ixNQv0kZIpaB3maF9XhZwCb3xu2WFjYrm0KY3Es97d5W0W2zd-9dYMyFJ4NFGgDsUqysCFSwrUk9wJ1dpqo_-SH-AZ3wI9sWInqyRCwMNCbIwsIP24zlvdNGqFR2aKKLCb3umMFEVggEd6c30kt3C9_ySxKZdP5ilpAuvvRQjznE1UMYEa3XUlsH2PCokOJUaUktwfEYzJSBoSyDZE8HubzeJpp4M')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/40 pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Photo 4</span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:bg-surface-container-lowest shadow-sm" title="Rotate" type="button">
+<span class="material-symbols-outlined text-[15px]">rotate_right</span>
+</button>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center text-error hover:bg-surface-container-lowest shadow-sm" title="Delete" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-semibold">Balcony / View</span>
+<span class="material-symbols-outlined text-on-primary text-[18px] cursor-grab opacity-80 group-hover:opacity-100">drag_indicator</span>
+</div>
+</div>
+<!-- Item 5: Add More Slot -->
+<div class="rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors aspect-[4/3] flex flex-col items-center justify-center text-center p-space-md cursor-pointer group shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary mb-1 group-hover:scale-110 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[22px]">add_photo_alternate</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+ Add More Photos</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Up to 20 images</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Landlord Fast-Track Ownership Verification -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Verify Ownership for "Verified Owner" Badge</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Verified listings appear on top of tenant searches and get 80% faster lease closures with direct trust.
+              </p>
+</div>
+<span class="px-space-sm py-1 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider whitespace-nowrap">
+              Instant Boost
+            </span>
+</div>
+<!-- Verification Method Selector -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Option A: Bill Upload (Active / Pre-uploaded) -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<input checked="" class="accent-secondary w-4 h-4 cursor-pointer" id="verif_bill" name="verification_method" type="radio"/>
+<label class="font-title-md text-title-md text-on-surface font-bold cursor-pointer" for="verif_bill">Utility Bill / Tax Receipt</label>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pl-6">
+                  Latest electricity bill (BESCOM / MSEDCL) or Property Tax receipt in your name.
+                </p>
+</div>
+<!-- Uploaded Sample File Preview Card -->
+<div class="pl-6 flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-error text-[24px]">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">BESCOM_Bill_Oct2024.pdf</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check</span> Verified &amp; Matched
+                      </span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Replace" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Option B: DigiLocker / Land Records -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col justify-between gap-space-md shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<input class="accent-secondary w-4 h-4 cursor-pointer" id="verif_digi" name="verification_method" type="radio"/>
+<label class="font-title-md text-title-md text-on-surface font-bold cursor-pointer" for="verif_digi">DigiLocker / Bhoomi</label>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Instant</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pl-6">
+                  Authenticate e-Khata or Registered Sale Deed instantly via Govt. DigiLocker portal.
+                </p>
+</div>
+<div class="pl-6">
+<button class="w-full py-2 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+<span>Connect with DigiLocker</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Publishing Settings & Contact Privacy -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Publishing Settings &amp; Privacy</h3>
+<!-- Visibility Toggle -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-bold">Publish Immediately upon Verification</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Listing goes live for tenants within 30 minutes of automatic deed check.</span>
+</div>
+</div>
+<!-- Custom Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-surface-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Contact Privacy Settings -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-bold">Tenant Contact Preference</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Mode A (Recommended) -->
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex items-start gap-space-sm shadow-sm transition-colors hover:bg-surface-container">
+<input checked="" class="accent-secondary mt-1 w-4 h-4" name="contact_pref" type="radio"/>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-body-md text-on-surface font-bold">In-App Chat &amp; WhatsApp Only</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Recommended</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero phone call spam. Screen interested profiles before sharing contact.</span>
+</div>
+</label>
+<!-- Mode B -->
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex items-start gap-space-sm shadow-sm transition-colors hover:bg-surface-container">
+<input class="accent-secondary mt-1 w-4 h-4" name="contact_pref" type="radio"/>
+<div class="flex flex-col gap-0.5">
+<span class="font-title-md text-body-md text-on-surface font-bold">Direct Phone Calls</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verified tenants can dial your masked virtual number (9 AM – 8 PM).</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (~35% width = 4 cols) - Live Tenant Listing Preview -->
+<div class="col-span-12 lg:col-span-4 sticky top-20 flex flex-col gap-space-md">
+<!-- Preview Header Label -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">visibility</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-bold">Live Tenant View</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Instant Preview
+          </span>
+</div>
+<!-- High Fidelity Listing Card Component -->
+<div class="w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col">
+<!-- Image Box (16:10 Ratio) -->
+<div class="relative w-full aspect-[16/10] bg-surface-container-high overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sunny contemporary living room with minimalist sofa, natural wooden finishes, potted indoor monstera plant, and wide sliding glass doors to balcony" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9wOe2qmv1w_f41vqqWAqmfKpfyR2kT8l7C7G7hkT0ZHcYLnbzQoPfc9-2nJr9ef8iXFKQ9TU20WCLlIxlJLva7Z6KSr-TmLOwHQhhMuudh0vWj0fDfAwEm55DWKfKGq9v_9E6gmyIk-CIO2n-Eh_nHcLDy_oSbPo0wYM8Mrp_cMhd8G6foEKFsOE2n6BaJw1HXZCpXJMGkp0bCs44FpZPtGCmzLuzV0qV2szhwg8')"></div>
+<!-- Badges Floating Over Image -->
+<div class="absolute top-space-sm left-space-sm flex items-center gap-1">
+<span class="px-space-sm py-1 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">savings</span> 0% Brokerage
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm flex items-center gap-1">
+<span class="px-space-sm py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[14px]">verified</span> Verified Owner
+              </span>
+</div>
+<!-- Carousel Indicator Dots -->
+<div class="absolute bottom-space-sm inset-x-0 flex items-center justify-center gap-1.5">
+<span class="w-2.5 h-1.5 rounded-full bg-surface-container-lowest shadow-sm"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+</div>
+<span class="absolute bottom-space-sm right-space-sm px-space-xs py-0.5 rounded bg-primary/70 backdrop-blur-sm text-on-primary font-label-sm text-label-sm">
+              1/4 Photos
+            </span>
+</div>
+<!-- Card Body Content -->
+<div class="p-space-lg flex flex-col gap-space-sm">
+<!-- Price Row -->
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-price-card text-on-surface">₹34,000</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ mo</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+ ₹3,500 Maint.</span>
+</div>
+<!-- Property Title & Community -->
+<div class="flex flex-col">
+<h4 class="font-title-md text-title-md text-on-surface font-bold leading-tight">Prestige Falcon City, 2 BHK</h4>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+<span class="truncate">Kanakapura Road, South Bengaluru</span>
+</div>
+</div>
+<!-- Attribute Chips Array -->
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">2 BHK</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">1,240 sq.ft</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Semi-Furnished</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">7th of 24 Fl.</span>
+</div>
+<!-- Financial terms highlight box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Security Deposit</span>
+<span class="font-title-md text-body-md text-on-surface font-bold">₹1,02,000</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Refundable (3 Mo)</span>
+</div>
+<!-- Landlord Credibility Tag -->
+<div class="flex items-center gap-space-xs pt-1">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">
+                RS
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct Owner: <strong class="text-on-surface">Col. Rajesh Sharma</strong></span>
+</div>
+<!-- Non-Broker Guarantee Footer -->
+<div class="mt-space-xs p-space-xs rounded bg-surface-container text-center">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span> Zero Brokerage Guaranteed
+              </span>
+</div>
+<!-- Mock CTA on Preview -->
+<button class="w-full mt-space-xs py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold text-center opacity-90 cursor-not-allowed" disabled="" type="button">
+              Contact Owner (Preview State)
+            </button>
+</div>
+</div>
+<!-- Listing Strength Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Listing Quality Score</span>
+<span class="font-title-md text-body-md text-secondary font-bold">95/100</span>
+</div>
+<!-- Progress bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 95%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+            Excellent! Includes 4 photos, verified utility bill, and transparent zero-broker terms.
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky Action Bar -->
+<footer class="sticky bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(0,0,0,0.06)] py-space-md px-space-xl">
+<div class="max-w-6xl mx-auto flex items-center justify-between">
+<!-- Back button -->
+<a class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-title-md text-body-md font-semibold transition-colors" data-path="add-new-property-step-2" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Rent &amp; Terms</span>
+</a>
+<!-- Auto save confirmation info -->
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Step 3 of 3 • All updates saved to cloud</span>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-md">
+<!-- Preview Modal Trigger -->
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-title-md text-body-md font-semibold flex items-center gap-1.5 shadow-sm" onclick="document.getElementById('preview-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Full Preview</span>
+</button>
+<!-- Final Publish Button -->
+<button class="px-space-xl py-2.5 rounded-lg bg-secondary hover:bg-on-secondary-container text-on-secondary font-title-md text-title-md font-bold transition-all shadow-md flex items-center gap-2 group" onclick="document.getElementById('success-modal').classList.remove('hidden')" type="button">
+<span>Publish Property Listing</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Modal Dialog: Instant Confirmation upon Publish -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-primary/60 backdrop-blur-sm" id="success-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-xl shadow-xl flex flex-col items-center text-center gap-space-lg relative animate-in fade-in zoom-in-95 duration-200">
+<!-- Top Icon -->
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Listing Submitted Successfully!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Your listing for <strong>Prestige Falcon City, 2 BHK</strong> has been submitted. Our automated property validation engine is confirming your ownership deed.
+        </p>
+</div>
+<!-- Live status tracker card -->
+<div class="w-full p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm text-left">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Fast-Track Deed Verification</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">In Progress (90%)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 90%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+          Estimated go-live: <strong class="text-on-surface">Today at 12:15 PM</strong>
+</span>
+</div>
+<div class="flex items-center gap-space-md w-full">
+<button class="flex-1 py-2.5 rounded-lg bg-surface-container text-on-surface font-title-md text-body-md font-semibold" onclick="document.getElementById('success-modal').classList.add('hidden')" type="button">
+          Edit Listing
+        </button>
+<a class="flex-1 py-2.5 rounded-lg bg-secondary text-on-secondary font-title-md text-body-md font-bold text-center" data-path="my-properties" href="#">
+          Go to Dashboard
+        </a>
+</div>
+</div>
+</div>
+<!-- Modal Dialog: Full Mobile/Desktop Preview -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-primary/60 backdrop-blur-sm" id="preview-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-space-xl shadow-xl flex flex-col gap-space-md max-h-[921px] overflow-y-auto">
+<div class="flex items-center justify-between border-b pb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tenant Page Preview</h3>
+<button class="p-1 text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('preview-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="relative w-full h-64 rounded-xl overflow-hidden bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center" data-alt="High resolution view of upscale contemporary living room and modern semi-furnished decor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWLmGhmzBKtCHH5uruexbxn-K0tbCqUdwwiNyjLWPq5PaciIZhSiOE_hcG_tpXE8r6d4EAldC3JQh0Bk5mNkzVITBqKFg7mWfFYc0hb11R0WomfRI1OcFvD56yMvZVWHYlmTIQFxyvD6RKj-QgDH1SKg6YqSyduvyIuyi5ik6Ft1_HXWCPYJQKNA-0Zf1iqVIXC-ejesZlRGSAVh87IGJte983szeWIWbCstangg8')"></div>
+<span class="absolute top-space-sm left-space-sm px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm font-bold">0% Brokerage</span>
+</div>
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Prestige Falcon City • 2 BHK</h2>
+<span class="font-headline-md text-headline-md text-secondary">₹34,000 / mo</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Located on Kanakapura Road, South Bengaluru. East-facing, gated community with 100% power backup, EV charging, clubhouse, and swimming pool.
+        </p>
+<div class="grid grid-cols-3 gap-space-sm p-space-md rounded-xl bg-surface-container-low text-center">
+<div>
+<div class="font-label-sm text-on-surface-variant">Super Area</div>
+<div class="font-title-md text-on-surface font-bold">1,240 sq.ft</div>
+</div>
+<div>
+<div class="font-label-sm text-on-surface-variant">Deposit</div>
+<div class="font-title-md text-on-surface font-bold">₹1,02,000</div>
+</div>
+<div>
+<div class="font-label-sm text-on-surface-variant">Available From</div>
+<div class="font-title-md text-on-surface font-bold">Immediate</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-title-md text-body-md font-bold" onclick="document.getElementById('preview-modal').classList.add('hidden')" type="button">
+          Close Preview &amp; Continue
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for preview interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    // Escape key modal dismiss
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const success = document.getElementById('success-modal');
+        const preview = document.getElementById('preview-modal');
+        if (success) success.classList.add('hidden');
+        if (preview) preview.classList.add('hidden');
+      }
+    });
+  });
+</script></main></div></body></html>
